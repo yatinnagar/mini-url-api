@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router();
 const validUrl=require('valid-url');
 const shortId=require('shortid');
+require('dotenv').config();
 
 const Url=require('../models/Url');
 
@@ -10,7 +11,7 @@ const Url=require('../models/Url');
 router.post('/shorten',async(req,res)=>{
     const {full_url}=req.body;
     console.log(full_url);
-    const baseUrl='http://localhost:5000';
+    const baseUrl=process.env.BASE_URL||'';
     if(!validUrl.isUri(baseUrl))
     {
         return res.status(401).json('Invalid base url ');
