@@ -1,0 +1,6 @@
+{
+  "name": "url link shortner",
+  "description": "A basic url link shortner API using Express",
+  "repository": "https://github.com/yatinnagar/mini-url-api",
+  "keywords": ["node", "express"]
+}
